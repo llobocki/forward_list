@@ -9,7 +9,6 @@
 #define LIST_H_
 
 #include <iostream>
-//#include <stddef.h>
 #include "node.h"
 
 template <class T> class List {

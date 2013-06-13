@@ -18,9 +18,6 @@ template <class T> struct Node {
 		value = t;
 		next = p;
 	}
-//	Node ( Node *p ) {
-//
-//	}
 	T get() {
 		return value;
 	}
