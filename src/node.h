@@ -18,6 +18,7 @@ template <class T> struct Node {
 		value = t;
 		next = p;
 	}
+
 	T get() {
 		return value;
 	}

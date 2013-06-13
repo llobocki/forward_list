@@ -108,4 +108,5 @@ template<class T> bool List<T>::is_empty() {
 	return size == 0;
 }
 
+
 #endif /* LIST_H_ */
