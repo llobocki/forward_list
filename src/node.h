@@ -19,11 +19,9 @@ template <class T> struct Node {
 		next = p;
 	}
 
-	T get() {
-		return value;
-	}
 	~Node() {
 	}
+
 };
 
 

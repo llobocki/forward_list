@@ -56,7 +56,6 @@ template <class T> void List<T>::add_head ( T t )
 
 template <class T> void List<T>::remove_head ()
 {
-//	T i = root->get();
 	Node<T> *tmp = root;
 	root = root->next;
 	delete tmp;
@@ -68,9 +67,8 @@ template <class T> void List<T>::print()
 {
 	int i = size;
 	Node<T> *n = root;
-	n = n->next;
 	while ( i > 0 ) {
-		std::cout << n->get() << '\n';
+		std::cout << n->value << '\n';
 		n = n->next;
 		i--;
 	}
@@ -79,11 +77,11 @@ template <class T> void List<T>::print()
 template <class T> void List<T>::remove ( T t )
 {
 	if ( size > 0 ) {
-		if ( size ==1 && t == root->get() ) {
+		if ( size ==1 && t == root->value ) {
 			delete root;
 			root = nullptr;
 		}
-		else if(t == root->get()){
+		else if(t == root->value){
 			Node<T> *tmp = root;
 			root = root->next;
 			delete tmp;
@@ -93,7 +91,7 @@ template <class T> void List<T>::remove ( T t )
 		else {
 			Node<T> *prev;
 			Node<T> *tmp;
-			for ( prev = root, tmp = root->next; tmp != 0 && ! ( tmp->get() ==t ); prev = prev->next, tmp = tmp ->next );
+			for ( prev = root, tmp = root->next; tmp != 0 && ! ( tmp->value ==t ); prev = prev->next, tmp = tmp ->next );
 			if ( tmp != 0 ) {
 				prev->next = tmp-> next;
 				delete tmp;
