@@ -19,6 +19,11 @@ template <class T> struct Node {
 		next = p;
 	}
 
+	Node (const Node<T> *n){
+		value = n->value;
+		next = n->next;
+	}
+
 	~Node() {
 	}
 
