@@ -12,9 +12,9 @@ template <class T> struct Node {
 	T value;
 	class Node<T> *next;
 	Node() {
-		next = 0;
+		next = nullptr;
 	}
-	Node ( T t, Node *p = 0 ) {
+	Node ( T t, Node *p = nullptr ) {
 		value = t;
 		next = p;
 	}

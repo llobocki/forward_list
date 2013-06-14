@@ -18,6 +18,7 @@ private:
 public:
 	List();
 	List ( T t );
+	~List();
 
 	void add_head ( T t );
 	void remove_head();
@@ -66,14 +67,13 @@ template <class T> void List<T>::remove_head ()
 template <class T> void List<T>::print()
 {
 	int i = size;
-	Node<T> *n = new Node<T> ( 0, root );
+	Node<T> *n = root;
 	n = n->next;
 	while ( i > 0 ) {
 		std::cout << n->get() << '\n';
 		n = n->next;
 		i--;
 	}
-	delete n;
 };
 
 template <class T> void List<T>::remove ( T t )
@@ -101,6 +101,16 @@ template <class T> void List<T>::remove ( T t )
 				size--;
 			}
 		}
+	}
+}
+
+template<class T> List<T>::~List() {
+	Node<T> *tmp;
+	int i = size;
+	while((i--) > 0){
+		tmp = root->next;
+		delete root;
+		root = tmp;
 	}
 }
 
