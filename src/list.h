@@ -78,6 +78,7 @@ template <class T> void List<T>::remove ( T t )
 {
 	if ( size > 0 ) {
 		if ( size ==1 && t == root->value ) {
+			size--;
 			delete root;
 			root = nullptr;
 		}
